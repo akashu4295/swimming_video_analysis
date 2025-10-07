@@ -68,3 +68,16 @@ for cnt in contours:
     if w > 20 and h > 20:  # filter out noise
         cv2.rectangle(output, (x, y), (x+w, y+h), (0, 255, 0), 2)
 cv2.imwrite("lane_bands_detected_green_and_yellow.jpg", output)
+
+
+# grayscaling
+# Read the image
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Display the image
+cv2.imshow('Grayscale Image', gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# Save the grayscale image
+cv2.imwrite('grayscale_image.jpg', gray)
